@@ -13,11 +13,9 @@ class RedisClient {
         this.delAsync = promisify(this.client.del).bind(this.client);
     }
 
-
     isAlive() {
         return this.client.connected;
     }
-
 
     async get(key) {
         try {
@@ -27,7 +25,6 @@ class RedisClient {
         }
     }
 
-
     async set(key, value, duration) {
         try {
             await this.setAsync(key, value, 'EX', duration);
@@ -35,7 +32,6 @@ class RedisClient {
             console.error(`Error setting key ${key}: ${error}`);
         }
     }
-
 
     async del(key) {
         try {
@@ -45,7 +41,6 @@ class RedisClient {
         }
     }
 }
-
 
 const redisClient = new RedisClient();
 export default redisClient;
