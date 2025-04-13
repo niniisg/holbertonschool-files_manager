@@ -38,3 +38,4 @@ static async postNew(req, res){
       }
     }
   }
+export default UsersController;
