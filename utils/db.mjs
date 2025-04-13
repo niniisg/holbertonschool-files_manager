@@ -39,6 +39,5 @@ class DBClient {
   }
 }
 
-// Exportar una instancia única
 const dbClient = new DBClient();
 export default dbClient;
